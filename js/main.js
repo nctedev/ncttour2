@@ -124,9 +124,9 @@ function handleResetPassword() {
 }
 
 function openDetail() {
-    window.location.href = "/html/Detail.html";
+    window.location.href = "html/Detail.html";
 }
 
 function openInvoice() {
-    window.location.href = "/html/Invoice.html";
+    window.location.href = "html/Detail.html";
 }

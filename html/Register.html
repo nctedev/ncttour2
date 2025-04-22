@@ -123,38 +123,38 @@
     <script src="../js/main.js"></script>
     <script>
         document.getElementById("registerForm").addEventListener("submit", function(e) {
-        e.preventDefault(); 
+            e.preventDefault(); 
 
-        const fullname = document.getElementById("fullname").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
-        if (fullname.length < 3) {
-            alert("Họ và tên phải có ít nhất 3 ký tự.");
-            return;
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert("Email không hợp lệ.");
-            return;
-        }
-        const phoneRegex = /^[0-9]{9,11}$/;
-        if (!phoneRegex.test(phone)) {
-            alert("Số điện thoại không hợp lệ. Vui lòng nhập từ 9 đến 11 chữ số.");
-            return;
-        }
-        if (password.length < 6) {
-            alert("Mật khẩu phải có ít nhất 6 ký tự.");
-            return;
-        }
-        if (password !== confirmPassword) {
-            alert("Mật khẩu xác nhận không khớp.");
-            return;
-        }
-        alert("Đăng ký thành công!");
-        this.submit(); 
-    });
+            const fullname = document.getElementById("fullname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            if (fullname.length < 3) {
+                alert("Họ và tên phải có ít nhất 3 ký tự.");
+                return false;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Email không hợp lệ.");
+                return false;
+            }
+            const phoneRegex = /^[0-9]{9,11}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Số điện thoại không hợp lệ. Vui lòng nhập từ 9 đến 11 chữ số.");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Mật khẩu phải có ít nhất 6 ký tự.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Mật khẩu xác nhận không khớp.");
+                return false;
+            }
+            alert("Đăng ký thành công!");
+            this.submit(); 
+        });
     </script>
 </body>
 </html>
