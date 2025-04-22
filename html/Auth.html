@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCTOUR</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .list-unstyled li{
+            padding: 4px;
+
+        }
+
+        .list-unstyled li>a {
+            color: #000;
+        }
+
+        .list-unstyled li>a:hover {
+            color: #ce2890;
+        }
+
+        .reset-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="header">
+            <div class="header_top">
+                <div class="header_hotline">
+                    <span>Hotline: <a href="#">1900 1177</a></span>
+                </div>
+                <div>
+                    <ul class="header_top_menu">
+                        <li>
+                            <a href="./Cart.html">Giỏ hàng</a>
+                        </li>
+                        <li>
+                            <a href="./Register.html">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="./Signin.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="reset-container">
+                <h2 class="form-title">Quên Mật Khẩu</h2>
+                <p class="text-center">Nhập email của bạn để nhận mã đặt lại mật khẩu.</p>
+                <form action="" id="forgot_form" onsubmit="handleForgotPassword(event)">
+                    <div class="mb-3">
+                        <label for="email_auth" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email_auth" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Gửi yêu cầu</button>
+                    <div class="text-center mt-3">
+                        <a href="./Signin.html">Quay lại đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="bg-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CÔNG TY DU LỊCH</h5>
+                        <p><strong>Địa chỉ:</strong> Hóc Môn, TP. Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> 0000******</p>
+                        <p><strong>Email:</strong> info@ncttour.com.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Chính sách đặt tour</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Ý kiến khách hàng</a></li>
+                            <li><a href="#">Phiếu góp ý</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Đăng ký nhận thông tin khuyến mãi</h5>
+                        <p>Nhập email để nhận ưu đãi cho chuyến đi tiếp theo.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-dark" type="submit">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">2025 NCT Tour &copy; Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

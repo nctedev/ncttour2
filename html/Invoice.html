@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCTOUR</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .list-unstyled li{
+            padding: 4px;
+
+        }
+
+        .list-unstyled li>a {
+            color: #000;
+        }
+
+        .list-unstyled li>a:hover {
+            color: #ce2890;
+        }
+        .invoice {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .invoice-header {
+            text-align: center;
+        }
+        .invoice-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            function loadInvoice() {
+            let order = JSON.parse(localStorage.getItem("order"));
+            if (!order) {
+                alert("Không có dữ liệu hóa đơn!");
+                window.location.href = "../index.html";
+                return;
+            }
+    
+            document.getElementById("customerName").textContent = order.customer.fullName;
+            document.getElementById("customerEmail").textContent = order.customer.email;
+            document.getElementById("customerPhone").textContent = order.customer.phone;
+            document.getElementById("customerAddress").textContent = order.customer.address;
+            document.getElementById("orderTotal").textContent = order.totalAmount;
+    
+            let orderDetails = document.getElementById("orderDetails");
+            orderDetails.innerHTML = "";
+            order.items.forEach((item, index) => {
+                let row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.price.toLocaleString()} đ</td>
+                        <td>${(item.price * item.quantity).toLocaleString()} đ</td>
+                    </tr>
+                `;
+                orderDetails.innerHTML += row;
+            });
+        }
+    
+        window.onload = loadInvoice;
+        })
+    </script>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="header">
+            <div class="header_top">
+                <div class="header_hotline">
+                    <span>Hotline: <a href="#">1900 1177</a></span>
+                </div>
+                <div>
+                    <ul class="header_top_menu">
+                        <li>
+                            <a href="./Cart.html">Giỏ hàng</a>
+                        </li>
+                        <li>
+                            <a href="./Register.html">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="./Signin.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="invoice">
+                <div class="invoice-header">
+                    <h2>🧾 HÓA ĐƠN THANH TOÁN</h2>
+                    <p>Cảm ơn quý khách đã đặt tour tại NCTOUR!</p>
+                </div>
+                <hr>
+                <h4>Thông Tin Khách Hàng</h4>
+                <p><strong>Họ và tên:</strong> <span id="customerName"></span></p>
+                <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                <p><strong>Điện thoại:</strong> <span id="customerPhone"></span></p>
+                <p><strong>Địa chỉ:</strong> <span id="customerAddress"></span></p>
+            
+                <hr>
+                <h4>Chi Tiết Đơn Hàng</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên Tour</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderDetails"></tbody>
+                </table>
+                <h4 class="text-end">Tổng cộng: <span id="orderTotal"></span> đ</h4>
+            
+                <div class="invoice-footer">
+                    <button onclick="window.print()" class="btn btn-primary">🖨️ In Hóa Đơn</button>
+                    <a href="../index.html" class="btn btn-secondary">Về Trang Chủ</a>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CÔNG TY DU LỊCH</h5>
+                        <p><strong>Địa chỉ:</strong> Hóc Môn, TP. Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> 0000******</p>
+                        <p><strong>Email:</strong> info@ncttour.com.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Chính sách đặt tour</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Ý kiến khách hàng</a></li>
+                            <li><a href="#">Phiếu góp ý</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Đăng ký nhận thông tin khuyến mãi</h5>
+                        <p>Nhập email để nhận ưu đãi cho chuyến đi tiếp theo.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-dark" type="submit">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">2025 NCT Tour &copy; Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

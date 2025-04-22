@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCTOUR</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .list-unstyled li{
+            padding: 4px;
+
+        }
+
+        .list-unstyled li>a {
+            color: #000;
+        }
+
+        .list-unstyled li>a:hover {
+            color: #ce2890;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="header">
+            <div class="header_top">
+                <div class="header_hotline">
+                    <span>Hotline: <a href="#">1900 1177</a></span>
+                </div>
+                <div>
+                    <ul class="header_top_menu">
+                        <li>
+                            <a href="./html/Cart.html">Giỏ hàng</a>
+                        </li>
+                        <li>
+                            <a href="./html/Register.html">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="./html/Signin.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_body">
+                <div class="header_logo">
+                    <img src="./img/Du lịch Logo.png" alt="" width="150px" height="100px">
+                </div>
+                <div class="nav">
+                    <ul class="nav_menu">
+                        <li class="nav_menu_item"><a href="index.html" class="active">DU LỊCH</a></li>
+                        <li class="nav_menu_item"><a href="#">VÉ MÁY BAY</a></li>
+                        <li class="nav_menu_item"><a href="#">KHÁCH SẠN</a></li>
+                        <li class="nav_menu_item"><a href="#">DỊCH VỤ LÀM VISA</a></li>
+                        <li class="nav_menu_item"><a href="#">THUÊ XE</a></li>
+                        <li class="nav_menu_item"><a href="#">TIN TỨC</a></li>
+                        <li class="nav_menu_item drop_down_menu">
+                            <a href="">GIỚI THIỆU</a>
+                            <ul class="drop_down p-0 m-0">
+                                <li><a href="#">Tổng quan</a></li>
+                                <li><a href="#">Thông tin công ty</a></li>
+                                <li><a href="#">Chứng nhận</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_header_img">
+                <img src="./img/lagoon-4812995_1920.jpg" alt="" width="100%" height="400px">
+            </div>
+            <div class="content_tour_menu">
+                <div class="menu-container">
+                    <a href="#tour_1" class="menu-item">
+                        <div class="bg-dark text-white menu-icon">
+                        </div>
+                        <span>Tour <strong>TRONG NƯỚC</strong></span>
+                    </a>
+                    <a href="#tour_2" class="menu-item">
+                        <div class="bg-primary text-white menu-icon">
+                        </div>
+                        <span>Tour <strong>NƯỚC NGOÀI</strong></span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="bg-danger text-white menu-icon">
+                        </div>
+                        <span>Dịch vụ làm <strong>VISA</strong></span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="bg-info text-white menu-icon">
+                        </div>
+                        <span><strong>VÉ MÁY BAY GIÁ RẺ</strong></span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="bg-success text-white menu-icon">
+                        </div>
+                        <span><strong>ĐẶT KHÁCH SẠN</strong></span>
+                    </a>
+                </div>
+            </div>
+            <div class="content_tour_cat">
+                <div class="menu-container">
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <img src="./img/travel-agent-pax-git.png" alt="Tour Doanh Nghiệp">
+                        </div>
+                        <span>Tour Doanh Nghiệp</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <img src="./img/little-church-du-lich-viet.png" alt="Du lịch Hành Hương">
+                        </div>
+                        <span class="highlight-text">Du lịch Hành Hương</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <img src="./img/usp-tour-doc-dao-du-lich-viet1.jpg" alt="Tour Độc Lạ">
+                        </div>
+                        <span>Tour Độc Lạ</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <img src="./img/snowman.png" alt="Du lịch Mùa Đông">
+                        </div>
+                        <span>Du lịch Mùa Đông</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <img src="./img/sakura(2).png" alt="Tour Hoa Anh Đào 2025">
+                        </div>
+                        <span>Tour Hoa Anh Đào 2025</span>
+                    </a>
+                </div>
+            </div>
+            <hr style="height: 2px;">
+            <div class="tour_home">
+                <h3 class="tour_home_title" id="tour_1">TOUR TRONG NƯỚC</h3>
+                <div class="row p-0 m-0">
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour-da-nang-cao-nguyen-ba-na-mua-xuan-du-lich-viet.jpg" class="card-img-top" alt="Tour 1">
+                            <div class="card-body">
+                                <h6 class="card-title">Đà Nẵng - Bà Nà - Hội An</h6>
+                                <p>3 ngày 2 đêm</p>
+                                <p>23/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">5.199.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card position-relative tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour-du-lich-da-nang-mua-xuan-2025-du-lich-viet.jpg" class="card-img-top" alt="Tour 2">
+                            <div class="card-body">
+                                <h6 class="card-title">Đà Nẵng - Bà Nà - Cố Đô Huế</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>22/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">7.099.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour-du-lich-da-nang-mua-xuan-du-lich-viet.jpg" class="card-img-top" alt="Tour 3">
+                            <div class="card-body">
+                                <h6 class="card-title">Bà Nà - Hội An - La Vang</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>21/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">7.699.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour-du-lich-da-nang-mua-xuan-gia-re-du-lich-viet.jpg" class="card-img-top" alt="Tour 3">
+                            <div class="card-body">
+                                <h6 class="card-title">Bà Nà - Hội An - La Vang</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>21/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">7.129.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px;">
+            <div class="tour_home">
+                <h3 class="tour_home_title" id="tour_2">TOUR CHÂU Á</h3>
+                <div class="row p-0 m-0">
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour_chau_a_1.jpg" class="card-img-top" alt="Tour 1">
+                            <div class="card-body">
+                                <h6 class="card-title">Tour Trung Quốc mùa Xuân 2025</h6>
+                                <p>3 ngày 2 đêm</p>
+                                <p>23/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">14.199.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card position-relative tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour_chau_a_2.jpg" class="card-img-top" alt="Tour 2">
+                            <div class="card-body">
+                                <h6 class="card-title">Tour Đài Loan</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>22/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">15.099.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour_chau_a_3.jpg" class="card-img-top" alt="Tour 3">
+                            <div class="card-body">
+                                <h6 class="card-title">Tour Nhật Bản - Tokyo</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>21/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">12.000.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card" onclick="openDetail()">
+                            <span class="badge">Từ Hồ Chí Minh</span>
+                            <img src="./img/anhtour/tour_chau_a_4.jpg" class="card-img-top" alt="Tour 3">
+                            <div class="card-body">
+                                <h6 class="card-title">Tour Trung Quốc - Bắc Kinh</h6>
+                                <p>4 ngày 3 đêm</p>
+                                <p>21/03/2025</p>
+                                <p>Còn 10 chỗ</p>
+                                <p class="tour-price">21.000.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px;">
+            <div class="tour_home">
+                <h3 class="tour_home_title" id="tour_3">KINH NGHIỆM DU LỊCH</h3>
+                <div class="row p-0 m-0">
+                    <div class="col-md-3">
+                        <div class="card tour-card">
+                            <img src="./img/anhtour/kinh-nghiem-du-lich-nam-my-du-lich-viet.jpg" class="card-img-top" alt="Kinh nghiệm du lịch Nam Mỹ">
+                            <div class="card-body">
+                                <h5 class="card-title">Kinh nghiệm du lịch Nam Mỹ</h5>
+                                <p class="card-text">Chia sẻ chi tiết các kinh nghiệm thực tế khi đi du lịch Nam Mỹ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card">
+                            <img src="./img/anhtour/kinh-nghiem-du-lich-tho-nhi-ki-du-lich-viet.jpg" class="card-img-top" alt="Kinh nghiệm du lịch Thổ Nhĩ Kỳ">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Kinh nghiệm du lịch Thổ Nhĩ Kỳ</h5>
+                                <p class="card-text">Chia sẻ kinh nghiệm du lịch đến Thổ Nhĩ Kỳ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card">
+                            <img src="./img/anhtour/kinh-nghiem-du-lich-cua-lo-du-lich-viet.jpg" class="card-img-top" alt="Kinh nghiệm du lịch Cửa Lò">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Kinh nghiệm du lịch Cửa Lò</h5>
+                                <p class="card-text">Chia sẻ các kinh nghiệm thực tế khi đi du lịch Cửa Lò...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card tour-card">
+                            <img src="./img/anhtour/ha-noi-du-lich-viet.jpg" class="card-img-top" alt="Kinh nghiệm du lịch Hà Nội">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Kinh nghiệm du lịch Hà Nội</h5>
+                                <p class="card-text">Hà Nội luôn là một địa điểm du lịch hấp dẫn trong nước...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CÔNG TY DU LỊCH</h5>
+                        <p><strong>Địa chỉ:</strong> Hóc Môn, TP. Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> 0000******</p>
+                        <p><strong>Email:</strong> info@ncttour.com.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Chính sách đặt tour</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Ý kiến khách hàng</a></li>
+                            <li><a href="#">Phiếu góp ý</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Đăng ký nhận thông tin khuyến mãi</h5>
+                        <p>Nhập email để nhận ưu đãi cho chuyến đi tiếp theo.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-dark" type="submit">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">2025 NCT Tour &copy; Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>

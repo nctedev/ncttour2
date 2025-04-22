@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCTOUR</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            min-height: 250px;
+        }
+
+        .cart-container {
+            margin-top: 50px;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        
+        .list-unstyled li{
+            padding: 4px;
+
+        }
+
+        .list-unstyled li>a {
+            color: #000;
+        }
+
+        .list-unstyled li>a:hover {
+            color: #ce2890;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="header">
+            <div class="header_top">
+                <div class="header_hotline">
+                    <span>Hotline: <a href="#">1900 1177</a></span>
+                </div>
+                <div>
+                    <ul class="header_top_menu">
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./Cart.html">Giỏ hàng</a>
+                        </li>
+                        <li>
+                            <a href="./Register.html">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="./Signin.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container mt-5">
+                <h2 class="text-center">🛍️ Thông Tin Thanh Toán</h2>
+                <form id="checkoutForm">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Họ và tên:</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số điện thoại:</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Địa chỉ:</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <h4 class="mt-4">🛒 Danh Sách Tour Của Bạn</h4>
+                    <table class="table table-bordered mt-3">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên Tour</th>
+                                <th>Số Lượng</th>
+                                <th>Giá</th>
+                                <th>Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartSummary"></tbody>
+                    </table>
+                    <h4 class="text-end">Tổng cộng: <span id="totalAmount">0</span> đ</h4>
+                    <button type="submit" class="btn btn-success w-100" onsubmit="openInvoice()">Xác Nhận Thanh Toán</button>
+                </form>
+            </div>
+        </div>
+        <footer class="bg-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CÔNG TY DU LỊCH</h5>
+                        <p><strong>Địa chỉ:</strong> Hóc Môn, TP. Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> 0000******</p>
+                        <p><strong>Email:</strong> info@ncttour.com.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Chính sách đặt tour</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Ý kiến khách hàng</a></li>
+                            <li><a href="#">Phiếu góp ý</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Đăng ký nhận thông tin khuyến mãi</h5>
+                        <p>Nhập email để nhận ưu đãi cho chuyến đi tiếp theo.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-dark" type="submit">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">2025 Du Lịch Việt. Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/main.js"></script>
+    <script>
+        function loadCartSummary() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartSummary = document.getElementById("cartSummary");
+            let totalAmount = 0;
+            cartSummary.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                let total = item.price * item.quantity;
+                totalAmount += total;
+
+                let row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.price.toLocaleString()} đ</td>
+                        <td>${total.toLocaleString()} đ</td>
+                    </tr>
+                `;
+                cartSummary.innerHTML += row;
+            });
+
+            document.getElementById("totalAmount").innerText = totalAmount.toLocaleString();
+        }
+
+        document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let fullName = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let address = document.getElementById("address").value;
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Giỏ hàng trống, vui lòng thêm sản phẩm!");
+                return;
+            }
+
+            let order = {
+                customer: { fullName, email, phone, address },
+                items: cart,
+                totalAmount: document.getElementById("totalAmount").innerText
+            };
+
+            localStorage.setItem("order", JSON.stringify(order));
+            localStorage.removeItem("cart");
+
+            alert("Đặt hàng thành công! Cảm ơn bạn đã đặt tour!");
+            window.location.href = "./Invoice.html";
+        });
+
+        loadCartSummary();
+    </script>
+</body>
+</html>

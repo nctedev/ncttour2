@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCTOUR</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .tour-header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .tour-price {
+            color: #d0021b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .list-unstyled li{
+            padding: 4px;
+
+        }
+
+        .list-unstyled li>a {
+            color: #000;
+        }
+
+        .list-unstyled li>a:hover {
+            color: #ce2890;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="header">
+            <div class="header_top">
+                <div class="header_hotline">
+                    <span>Hotline: <a href="#">1900 1177</a></span>
+                </div>
+                <div>
+                    <ul class="header_top_menu">
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Phiếu góp ý</a>
+                        </li>
+                        <li>
+                            <a href="./Register.html">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="./Signin.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_body">
+                <div class="header_logo">
+                    <img src="../img/Du lịch Logo.png" alt="" width="150px" height="100px">
+                </div>
+                <div class="nav">
+                    <ul class="nav_menu">
+                        <li class="nav_menu_item"><a href="./Home.html" class="active">DU LỊCH</a></li>
+                        <li class="nav_menu_item"><a href="#">VÉ MÁY BAY</a></li>
+                        <li class="nav_menu_item"><a href="#">KHÁCH SẠN</a></li>
+                        <li class="nav_menu_item"><a href="#">DỊCH VỤ LÀM VISA</a></li>
+                        <li class="nav_menu_item"><a href="#">THUÊ XE</a></li>
+                        <li class="nav_menu_item"><a href="#">TIN TỨC</a></li>
+                        <li class="nav_menu_item drop_down_menu">
+                            <a href="">GIỚI THIỆU</a>
+                            <ul class="drop_down p-0 m-0">
+                                <li><a href="">Tổng quan</a></li>
+                                <li><a href="">Thông tin công ty</a></li>
+                                <li><a href="">Chứng nhận</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <header class="tour-header text-center">
+                <h1>Du lịch Đông Bắc Hè - Hà Nội - Hà Giang - Cao Bằng - Thác Bản Giốc</h1>
+                <p><strong>Thời gian:</strong> 5 ngày 4 đêm | <strong>Mã tour:</strong> 17276</p>
+            </header>
+        
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="../img/anhtour/ha-noi-du-lich-viet.jpg" class="img-fluid" alt="Hình ảnh tour">
+                        <h3 class="mt-3">Điểm nhấn hành trình</h3>
+                        <ul>
+                            <li>Chinh phục đèo Mã Pí Lèng – "Nam thiên đệ nhất đèo".</li>
+                            <li>Checkin Sông Nho Quế.</li>
+                            <li>Ngắm cảnh Thác Bản Giốc đẹp như tranh.</li>
+                            <li>Thưởng thức ẩm thực phố cổ Đồng Văn.</li>
+                        </ul>
+                        <h3>Mô tả tour</h3>
+                        <p>Tour du lịch Hà Giang - Cao Bằng đưa du khách khám phá thiên nhiên tuyệt đẹp của Đông Bắc với những thắng cảnh hùng vĩ...</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <p class="tour-price">9,399,000 đ <del>9,999,000 đ</del></p>
+                            <label for="departure-date" class="form-label">Chọn ngày khởi hành:</label>
+                            <input type="date" id="departure-date" class="form-control mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button id="btnDat" class="btn btn-danger w-100 h-100 p-2">ĐẶT TOUR</button>
+                                </div>
+                                <div class="col-6">
+                                    <button id="btnAdd" 
+                                        class="btn btn-danger w-100 h-100 p-2"
+                                        data-tour-id="17276"
+                                        data-tour-name="Du lịch Đông Bắc Hè - Hà Nội - Hà Giang - Cao Bằng - Thác Bản Giốc"
+                                        data-tour-price="9399000">
+                                        THÊM VÀO GIỎ HÀNG
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CÔNG TY DU LỊCH</h5>
+                        <p><strong>Địa chỉ:</strong> Hóc Môn, TP. Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> 0000******</p>
+                        <p><strong>Email:</strong> info@ncttour.com.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Chính sách đặt tour</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Ý kiến khách hàng</a></li>
+                            <li><a href="#">Phiếu góp ý</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">Đăng ký nhận thông tin khuyến mãi</h5>
+                        <p>Nhập email để nhận ưu đãi cho chuyến đi tiếp theo.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-dark" type="submit">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">2025 Du Lịch Việt. Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            let tourId = this.getAttribute("data-tour-id");
+            let tourName = this.getAttribute("data-tour-name");
+            let tourPrice = parseInt(this.getAttribute("data-tour-price"));
+            let tourItem = {
+                id: tourId,
+                name: tourName,
+                price: tourPrice,
+                quantity: 1
+            };
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingTour = cart.find(item => item.id === tourId);
+            if (existingTour) {
+                existingTour.quantity += 1; 
+            } else {
+                cart.push(tourItem);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "./Cart.html";
+        });
+    </script>
+</body>
+</html>
