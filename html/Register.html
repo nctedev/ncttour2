@@ -132,6 +132,11 @@
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirm-password").value;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const nameRegex = /^[A-ZÀ-Ỹ][a-zà-ỹA-ZÀ-Ỹ\s]{1,}$/;
+            if (!nameRegex.test(fullname)) {
+                alert("Tên không hợp lệ. Phải bắt đầu bằng chữ hoa, có ít nhất 2 ký tự và chỉ chứa chữ cái.");
+                return false;
+            }
             if (!emailRegex.test(email)) {
                 alert("Email không hợp lệ.");
                 return false;
