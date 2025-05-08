@@ -39,7 +39,7 @@ function handleRegister() {
     let confirmPassword = document.getElementById("confirm-password").value.trim();
 
     const testEmail = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const testName = /^[A-Za-zà-ỹÀ-Ỹ\s]+$/;
+    const testName = /^[A-ZÀ-Ỹ][a-zà-ỹA-ZÀ-Ỹ\s]{1,}$/;
     const testPhone = /^0\d{8,9}$/;
     const testPass = /^[a-zA-Z0-9]{3,}$/;
 
