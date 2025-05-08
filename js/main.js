@@ -45,7 +45,6 @@ function handleRegister() {
 
     let errorMessage = "";
 
-    if (!testName.test(fullName)) errorMessage += "Tên không hợp lệ phai viet hoa dau tu.\n";
     if (!testEmail.test(email)) errorMessage += "Email không hợp lệ.\n";
     if (!testPhone.test(phone)) errorMessage += "Số điện thoại không hợp lệ.\n";
     if (!testPass.test(password)) errorMessage += "Mật khẩu không hợp lệ.\n";
@@ -61,6 +60,7 @@ function handleRegister() {
         alert("Email đã tồn tại, vui lòng chọn email khác.");
         return;
     }
+
     users.push({ fullName, email, phone, password });
     saveUsers(users);
 
